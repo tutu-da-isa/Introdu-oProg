@@ -1,2 +1,2 @@
-# Introdu-oProg
+# IntroducaoProg
 Diretório com as atividades da disciplina

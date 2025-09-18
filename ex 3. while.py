@@ -1,6 +1,7 @@
 n = int(input())
 nb = 0
+result = n
 while nb<n:
-    n += nb
+    result += nb
     nb +=1
-print (n)
+print (result)

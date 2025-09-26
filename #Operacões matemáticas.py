@@ -1,5 +1,6 @@
 #Operacões matemáticas
 import sys
+import os
 sys.set_int_max_str_digits(999999999)
 pv = ["1", "2", "3", "4", "5", "6", "7", "sair"]
 print("Escolha uma das seguintes opções: \n 1- soma \n 2- subtração \n 3- multiplicação \n 4- divisão \n 5- par ou impar \n 6- primo \n 7- fatorial \n para encerrar digite sair. ")
@@ -35,15 +36,17 @@ while n1 != "sair":
         dp = 0
         if x < 2:
             print (f"{x} não é primo")
-        else:
-            for i in range (x):
+        if x !=2 and x%2 == 0:
+            print (f"o número {x} não é primo pois apesar de ser diferente de 2, é possível dividí-lo por 2")
+        if x >= 2:
+            for i in range(x):
                 if x%nb ==0:
                     dp +=1
                 nb +=1
-            if dp > 2:
-                print(f"tem {dp} divisões possiveis, portanto não é primo")
-            else:
-                print(f"tem {dp} divisões possiveis, portanto é primo")
+        if dp > 2:
+            print(f"tem {dp} divisões possiveis, portanto não é primo")
+        else:
+            print(f"tem {dp} divisões possiveis, portanto é primo")
     if n1 =="7":
         x = int(input("digite o número: "))
         fat = 1
@@ -52,7 +55,9 @@ while n1 != "sair":
             fat*=nb
             nb += 1
         print (f"o fatorial do número digitado é {fat}")
-    print ("  \n  ")
+    print (" ")
+    input("pressione enter para continuar!")
+    os.system('cls')
     print("Escolha uma das seguintes opções: \n 1- soma \n 2- subtração \n 3- multiplicação \n 4- divisão \n 5- par ou impar \n 6- primo \n 7- fatorial \n para encerrar digite sair. ")    
     n = (input("digite o número da operação desejada: "))
     n1=n.lower()
